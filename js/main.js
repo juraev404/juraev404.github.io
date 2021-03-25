@@ -1,4 +1,30 @@
+$(document).ready(function() {
 (function($) {
+
+
+	
+	var a = $("nav a");
+
+	a.click(function() {
+		var data = $(this).data("id");
+		var H = $(data).offset().top;
+		$("html, body").animate({
+			scrollTop: H	
+		}, 1000);
+	});
+
+	$(window).scroll(function() {
+		$("section").each(function(index, el) {
+			var Top = $(el).offset().top - 50;
+			var Height = $(el).height() + Top - 200;
+			if (window.scrollY > Top && window.scrollY < Height) {
+				a.removeClass('active');
+				$("nav a[data-id='#" + el.id + "']").addClass('active');
+			}
+		});
+	});
+
+
 
 	"use strict";
 
@@ -206,4 +232,4 @@
 
 
 })(jQuery);
-
+});
