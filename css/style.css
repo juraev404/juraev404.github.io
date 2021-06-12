@@ -9853,3 +9853,11 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+.services-sec
+{
+  background-color: #eee;
+  margin-bottom: 50px;
+}
+.placement{
+  width: 100%;
+}
